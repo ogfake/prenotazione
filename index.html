@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Precompilazione Prenotazione</title>
+</head>
+<body>
+    <iframe id="prenotaIframe" src="https://prenota.alfadocs.com/p/milano-adec-srl-14633" style="width:100%; height:600px;"></iframe>
+    <script>
+        window.onload = function() {
+            var iframe = document.getElementById('prenotaIframe');
+            iframe.onload = function() {
+                var doc = iframe.contentDocument || iframe.contentWindow.document;
+                // Cambia i valori dei campi con i nomi e valori effettivi
+                doc.querySelector('select[name="Specialità"]').value = "ADEC Pacchetto Junior";
+                doc.querySelector('select[name="Motivo dell'appuntamento"]').value = "VABT Visita e Igiene Bambini";
+            };
+        };
+    </script>
+</body>
+</html>
